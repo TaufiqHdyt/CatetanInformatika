@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Responsi Tipe 2</title>
+ <style type="text/css">
+  .body {
+   display: flex;
+   flex-direction: column;
+  }
+  .header {
+   background-color: #3c8dbc;
+   height: 100px;
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+  }
+  .profil {
+   height: 75px;
+   width: 75px;
+   margin: 10px;
+   border-radius: 50%;
+   background-image: url("responsi/tipe 2/budi.jpg");
+   background-size: 90%
+  }
+  .nama {
+   margin: 10px;
+   color: white
+  }
+  .content {
+   display: flex;
+   flex-direction: row;
+   background-color: lightblue
+  }
+  .sidebar {
+   width: 30%;
+   height: 100%;
+   display: flex;
+   flex-direction: column;
+  }
+  .compose {
+   background-color: #2d6da4;
+   color: white;
+   border: solid 1px black;
+   border-radius: 5px;
+   padding: 5px;
+   margin: 10px
+  }
+  .compose:hover {
+   border: solid 1px white;
+  }
+  .menu {
+   background-color: white;
+   border-radius: 5px;
+   padding: 10px;
+   margin: 10px
+  }
+  .sub, .compose {
+   display: flex;
+   flex-direction: row;
+   padding: 10px
+  }
+  .compose {
+   align-items: center;
+   justify-content: center
+  }
+  .ket {
+   margin: 0 10px
+  }
+  .blue {
+   color: blue;
+  }
+  .icon {
+   margin: 0 10px
+  }
+  .icon > img {
+   width: 20px
+  }
+  hr {
+   color: #eee
+  }
+
+  .isi {
+   width: 70%;
+   background-color: white;
+   border-top: solid 3px blue;
+   border-radius: 5px;
+   margin: 10px;
+   padding: 20px
+  }
+
+  .info {
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+  }
+
+  .btn {
+   display: flex;
+   justify-content: flex-end;
+  }
+  .subject > p {
+   font-weight: 700;
+  }
+  .sender {
+   display: flex;
+   justify-content: space-between;
+  }
+  .drf {
+   margin: 10px;
+   padding: 5px;
+   border-radius: 5px;
+  }
+  .drf:hover {
+   background-color: #3c8dbc;
+   color: white
+  }
+  .tgl {
+   color: grey
+  }
+ </style>
+</head>
+<body>
+ <div class="header">
+  <div class="profil"></div>
+  <div class="nama"><p>Budi</p></div>
+ </div>
+ <div class="content">
+  <div class="sidebar">
+   <button class="compose">
+    <div class="icon">
+     <img src="responsi\tipe 2\compose-icon.png">
+    </div>
+    <div>Compose</div>
+   </button>
+   <div class="menu">
+    <div class="sub in">
+     <div class="icon">
+      <img src="responsi\tipe 2\inbox-icon.png">
+     </div>
+     <div class="ket">Inbox</div>
+     <div class="blue">[50]</div>
+    </div>
+    <hr>
+    <div class="sub out">
+     <div class="icon">
+      <img src="responsi\tipe 2\sent-icon.png">
+     </div>
+     <div class="ket">Sent</div>
+     <div class="blue">[2]</div>
+    </div>
+    <hr>
+    <div class="sub drft">
+     <div class="icon">
+      <img src="responsi\tipe 2\draft-icon.png">
+     </div>
+     <div class="ket">Draft</div>
+     <div class="blue">[5]</div>
+    </div>
+    <hr>
+    <div class="sub trs">
+     <div class="icon">
+      <img src="responsi\tipe 2\trash-icon.png">
+     </div>
+     <div class="ket">Trash</div>
+     <div class="blue">[2]</div>
+    </div>
+   </div>
+  </div>
+  <div class="isi">
+   <div class="info">
+    <p>Read Mail</p>
+    <div class="btn">
+     <button class="drf">delete</button>
+     <button class="drf">reply</button>
+     <button class="drf">forward</button>
+    </div>
+   </div>
+   <hr>
+   <div class="subject">
+    <p>Subject : Keep Fight!</p>
+   </div>
+   <div class="sender">
+    <p>From : Support@lab5.amikom.ac.id</p>
+    <div class="tgl"><p>Jogja, 19th April 2018</p></div>
+   </div>
+   <hr>
+   <div class="mail">
+    <p>Hello John, Keffiyeh blog actually fashion axe vegan, irony biodiesel. Cold-pressed hoodie chillwave put a bird on it aesthetic, bitters brunch meggings vegan iPhone. Dreamcatcher vegan scenester mlkshk. Ethical master cleanse Bushwick, occupy Thundercats banjo cliche ennui farm-to-table mlkshk fanny pack gluten-free. Marfa butcher vegan quinoa, bicycle rights disrupt tofu scenester chillwave 3 wolf moon asymmetrical taxidermy pour-over. Quinoa tote bag fashion axe, Godard disrupt migas church-key tofu blog locavore. Thundercats cronut polaroid Neutra tousled, meh food truck selfies narwhal American Apparel.</p>
+    <p>Raw denim McSweeney's bicycle rights, iPhone trust fund quinoa Neutra VHS kale chips vegan PBR&B literally Thundercats +1. Forage tilde four dollar toast, banjo health goth paleo butcher. Four dollar toast Brooklyn pour-over American Apparel sustainable, lumbersexual listicle gluten-free health goth umami hoodie. Synth Echo Park bicycle rights DIY farm-to-table, retro kogi sriracha dreamcatcher PBR&B flannel hashtag irony Wes Anderson. Lumbersexual Williamsburg Helvetica next level. Cold-pressed slow-carb pop-up normcore Thundercats Portland, cardigan literally meditation lumbersexual crucifix. Wayfarers raw denim paleo Bushwick, keytar Helvetica scenester keffiyeh 8-bit irony mumblecore whatever viral Truffaut.</p>
+    <p>Post-ironic shabby chic VHS, Marfa keytar flannel lomo try-hard keffiyeh cray. Actually fap fanny pack yr artisan trust fund. High Life dreamcatcher church-key gentrify. Tumblr stumptown four dollar toast vinyl, cold-pressed try-hard blog authentic keffiyeh Helvetica lo-fi tilde Intelligentsia. Lomo locavore salvia bespoke, twee fixie paleo cliche brunch Schlitz blog McSweeney's messenger bag swag slow-carb. Odd Future photo booth pork belly, you probably haven't heard of them actually tofu ennui keffiyeh lo-fi Truffaut health goth. Narwhal sustainable retro disrupt.</p>
+   </div>
+  </div>
+ </div>
+</body>
+</html>
