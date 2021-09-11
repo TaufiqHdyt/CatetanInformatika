@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tipe 3 - Hitung Tarif</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    p {
+      margin: 0;
+    }
+    .keterangan {
+      display: inline-flex;
+      width: 200px;
+    }
+    .input {
+      width: 100px;
+    }
+    .input.number{
+      text-align: right;
+    }
+  </style>
+</head>
+<body>
+  <form id="hitung-tarif" method="POST" required>
+    <label for="pelanggan">
+      <p class="keterangan">Pelanggan</p>
+      <span>:</span>
+      <input class="input" type="text" name="pelanggan" id="pelanggan" required>
+    </label>
+    <br/>
+    <label for="kategori">
+      <p class="keterangan">Kategori</p>
+      <span>:</span>
+      <select class="input" name="kategori" id="kategori" required>
+        <option value="" selected disabled>Pilih Kategori</option>
+        <option value="sosial">Sosial</option>
+        <option value="rumah">Rumah</option>
+        <option value="industri">Industri</option>
+      </select>
+    </label>
+    <br/>
+    <label for="jumlah">
+      <p class="keterangan">Jumlah Pemakaian Listrik</p>
+      <span>:</span>
+      <input class="input" type="number" name="jumlah" max="10" min="0" id="jumlah" required>
+    </label>
+    <br/>
+    <input id="hitung" type="submit" value="Hitung">
+    <input id="reset" type="reset" value="Reset">
+    <br/>
+    <label for="tarif">
+      <p class="keterangan">Tarif</p>
+      <span>:</span>
+      <input class="input number" type="number" name="tarif" id="tarif" disabled>
+    </label>
+    <br/>
+    <label for="abodemen">
+      <p class="keterangan">Abodemen</p>
+      <span>:</span>
+      <input class="input number" type="number" name="abodemen" id="abodemen" disabled>
+    </label>
+    <br/>
+    <label for="subtotal">
+      <p class="keterangan">Sub Total</p>
+      <span>:</span>
+      <input class="input number" type="number" name="subtotal" id="subtotal" disabled>
+    </label>
+    <br/>
+    <label for="pajak">
+      <p class="keterangan">Pajak</p>
+      <span>:</span>
+      <input class="input number" type="number" name="pajak" id="pajak" disabled>
+    </label>
+    <br/>
+    <label for="totalBayar">
+      <p class="keterangan">Total Bayar</p>
+      <span>:</span>
+      <input class="input number" type="number" name="totalBayar" id="totalBayar" disabled>
+    </label>
+  </form>
+
+  <script>
+    function $(el) {
+      return document.querySelector(el);
+    }
+
+    const form = $('#hitung-tarif');
+    const hitung = $('#hitung');
+    
+    function hitungTarif(e) {
+      e.preventDefault();
+
+      let kategori = $('#kategori').value || '';
+      let jumlah = $('#jumlah').value || 0;
+
+      let tarif, abodemen, pajak;
+      
+      if (kategori == 'sosial') {
+        tarif = 500;
+        abodemen = 10000;
+        pajak = 0;
+      } else if (kategori == 'rumah') {
+        tarif = 1000;
+        abodemen = 30000;
+        pajak = .1;
+      } else if (kategori == 'industri') {
+        tarif = 3000;
+        abodemen = 50000;
+        pajak = .3;
+      }
+
+      let subTotal = tarif * jumlah + abodemen;
+      let totalPajak = pajak * subTotal;
+      let total = subTotal + totalPajak;
+      
+      $('#tarif').value = tarif * jumlah;
+      $('#abodemen').value = abodemen;
+      $('#subtotal').value = subTotal;
+      $('#pajak').value = totalPajak;
+      $('#totalBayar').value = total;
+    }
+
+    form.addEventListener('submit', hitungTarif, true);
+    hitung.addEventListener('click', hitungTarif, true);
+  </script>
+</body>
+</html>
