@@ -96,10 +96,13 @@
       let jumlah = $('#jumlah').value || 0;
       let status = $('#status').value || 0;
 
+      let total = namaBarang * jumlah;
+      let diskon = namaBarang * jumlah * status;
+
       $('#harga').value = namaBarang;
-      $('#total').value = namaBarang * jumlah;
-      $('#diskon').value = namaBarang * status;
-      $('#totalBayar').value = namaBarang * jumlah - namaBarang * status;
+      $('#total').value = total;
+      $('#diskon').value = diskon;
+      $('#totalBayar').value = total - diskon;
     }
 
     form.addEventListener('submit', hitungHarga, true);
