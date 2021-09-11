@@ -89,7 +89,7 @@
     const form = $('#hitung-harga');
     const hitung = $('#hitung');
     
-    function hitungNilai(e) {
+    function hitungHarga(e) {
       e.preventDefault();
 
       let namaBarang = $('#namaBarang').value || 0;
@@ -102,8 +102,8 @@
       $('#totalBayar').value = namaBarang * jumlah - namaBarang * status;
     }
 
-    form.addEventListener('submit', hitungNilai, true);
-    hitung.addEventListener('click', hitungNilai, true);
+    form.addEventListener('submit', hitungHarga, true);
+    hitung.addEventListener('click', hitungHarga, true);
   </script>
 </body>
 </html>
