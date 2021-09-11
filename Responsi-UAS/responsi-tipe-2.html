@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tipe 2 - Hitung Harga</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    p {
+      margin: 0;
+    }
+    .keterangan {
+      display: inline-flex;
+      width: 150px;
+    }
+    .input {
+      width: 100px;
+    }
+    .input.number{
+      text-align: right;
+    }
+  </style>
+</head>
+<body>
+  <form id="hitung-harga" method="POST" required>
+    <label for="namaBarang">
+      <p class="keterangan">Nama Barang</p>
+      <span>:</span>
+      <select class="input" name="namaBarang" id="namaBarang" required>
+        <option value="" selected disabled>Pilih Barang</option>
+        <option value="50000">USB</option>
+        <option value="600000">Monitor</option>
+        <option value="400000">Speaker</option>
+      </select>
+    </label>
+    <br/>
+    <label for="jumlah">
+      <p class="keterangan">Jumlah</p>
+      <span>:</span>
+      <input class="input" type="number" name="jumlah" max="10" min="0" id="jumlah" required>
+    </label>
+    <br/>
+    <label for="status">
+      <p class="keterangan">Status</p>
+      <span>:</span>
+      <select class="input" name="status" id="status" required>
+        <option value="" selected disabled>Pilih Status</option>
+        <option value=".10">Member</option>
+        <option value="0">Non Member</option>
+      </select>
+    </label>
+    <br/>
+    <input id="hitung" type="submit" value="Hitung">
+    <input id="reset" type="reset" value="Reset">
+    <br/>
+    <label for="harga">
+      <p class="keterangan">Harga</p>
+      <span>:</span>
+      <input class="input number" type="number" name="harga" id="harga" disabled>
+    </label>
+    <br/>
+    <label for="total">
+      <p class="keterangan">Total</p>
+      <span>:</span>
+      <input class="input number" type="number" name="total" id="total" disabled>
+    </label>
+    <br/>
+    <label for="diskon">
+      <p class="keterangan">Diskon 10%</p>
+      <span>:</span>
+      <input class="input number" type="number" name="diskon" id="diskon" disabled>
+    </label>
+    <br/>
+    <label for="totalBayar">
+      <p class="keterangan">Total Bayar</p>
+      <span>:</span>
+      <input class="input number" type="number" name="totalBayar" id="totalBayar" disabled>
+    </label>
+  </form>
+
+  <script>
+    function $(el) {
+      return document.querySelector(el);
+    }
+
+    const form = $('#hitung-harga');
+    const hitung = $('#hitung');
+    
+    function hitungNilai(e) {
+      e.preventDefault();
+
+      let namaBarang = $('#namaBarang').value || 0;
+      let jumlah = $('#jumlah').value || 0;
+      let status = $('#status').value || 0;
+
+      $('#harga').value = namaBarang;
+      $('#total').value = namaBarang * jumlah;
+      $('#diskon').value = namaBarang * status;
+      $('#totalBayar').value = namaBarang * jumlah - namaBarang * status;
+    }
+
+    form.addEventListener('submit', hitungNilai, true);
+    hitung.addEventListener('click', hitungNilai, true);
+  </script>
+</body>
+</html>
