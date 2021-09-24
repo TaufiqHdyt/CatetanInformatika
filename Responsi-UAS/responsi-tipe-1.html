@@ -82,7 +82,7 @@
       let nilaiAkhir = (presensi / 14 * 10) + nilaiUts * .3 + nilaiUas * .4 + nilaiTugas * .2 || 0;
       let nilaiHuruf = nilaiAkhir >= 80 ? 'A' : nilaiAkhir <= 80 && nilaiAkhir > 60 ? 'B' : nilaiAkhir <= 60 && nilaiAkhir > 40 ? 'C' : nilaiAkhir <= 40 && nilaiAkhir > 20 ? 'D' : nilaiAkhir < 20 ? 'E' : 'E' || 'E';
 
-      $('#nilaiAkhir').value = nilaiAkhir;
+      $('#nilaiAkhir').value = nilaiAkhir.toFixed(2) * 1;
       $('#nilaiHuruf').value = nilaiHuruf;
     }
 
