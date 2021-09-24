@@ -87,7 +87,7 @@
     }
 
     function formatter(number) {
-      let value = new Intl(undefined, {style: 'currency', currency: 'IDR'}).format(number);
+      let value = new Intl.NumberFormat(undefined, {style: 'currency', currency: 'IDR'}).format(number);
       return value;
     }
 
