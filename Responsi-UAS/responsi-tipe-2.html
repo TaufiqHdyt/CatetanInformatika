@@ -59,25 +59,25 @@
     <label for="harga">
       <p class="keterangan">Harga</p>
       <span>:</span>
-      <input class="input number" type="number" name="harga" id="harga" disabled>
+      <input class="input number" type="text" name="harga" id="harga" disabled>
     </label>
     <br/>
     <label for="total">
       <p class="keterangan">Total</p>
       <span>:</span>
-      <input class="input number" type="number" name="total" id="total" disabled>
+      <input class="input number" type="text" name="total" id="total" disabled>
     </label>
     <br/>
     <label for="diskon">
       <p class="keterangan">Diskon 10%</p>
       <span>:</span>
-      <input class="input number" type="number" name="diskon" id="diskon" disabled>
+      <input class="input number" type="text" name="diskon" id="diskon" disabled>
     </label>
     <br/>
     <label for="totalBayar">
       <p class="keterangan">Total Bayar</p>
       <span>:</span>
-      <input class="input number" type="number" name="totalBayar" id="totalBayar" disabled>
+      <input class="input number" type="text" name="totalBayar" id="totalBayar" disabled>
     </label>
   </form>
 
@@ -107,7 +107,7 @@
       $('#harga').value = formatter(namaBarang);
       $('#total').value = formatter(total);
       $('#diskon').value = formatter(diskon);
-      $('#totalBayar').value = total - diskon;
+      $('#totalBayar').value = formatter(total - diskon);
     }
 
     form.addEventListener('submit', hitungHarga, true);
