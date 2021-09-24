@@ -86,9 +86,13 @@
       return document.querySelector(el);
     }
 
+    function formatter(number) {
+      return new Intl(undefined, {style: 'currency', currency: 'IDR'}).format(number)
+    }
+
     const form = $('#hitung-harga');
     const hitung = $('#hitung');
-    
+
     function hitungHarga(e) {
       e.preventDefault();
 
@@ -99,9 +103,9 @@
       let total = namaBarang * jumlah;
       let diskon = namaBarang * jumlah * status;
 
-      $('#harga').value = namaBarang;
-      $('#total').value = total;
-      $('#diskon').value = diskon;
+      $('#harga').value = formatter(namaBarang);
+      $('#total').value = formatter(total);
+      $('#diskon').value = formatter(diskon);
       $('#totalBayar').value = total - diskon;
     }
 
